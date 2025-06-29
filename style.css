@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #1a237e;
+  --secondary-color: #424242;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --accent-color: #607d8b;
+  --border-radius: 4px;
+  --spacing-unit: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-unit);
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-content {
+  flex: 1;
+  padding: calc(var(--spacing-unit) * 2);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: var(--spacing-unit);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.input-label {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.file-input-wrapper,
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.radio-group {
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  cursor: pointer;
+}
+
+input[type="text"],
+select,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+  background-color: #fcfcfc;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.primary-button:hover {
+  background-color: #0d1b4a;
+}
+
+.file-input-container,
+.filter-section,
+.mode-section,
+.model-section,
+.summary-section,
+.output-section {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .file-input-wrapper {
+    flex-direction: column;
+  }
+
+  .app-content {
+    padding: var(--spacing-unit);
+  }
+}

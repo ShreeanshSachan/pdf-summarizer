@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <h1>PDF Summarizer</h1>
+        </div>
+
+        <div class="app-content">
+            <!-- File Path Input -->
+            <div class="file-input-container">
+                <label class="input-label">Choose PDF File</label>
+                <div class="file-input-wrapper">
+                    <input type="text" id="filePathInput" placeholder="Enter file path" readonly>
+                    <button id="browseFileBtn" class="primary-button">Browse</button>
+                    <input type="file" id="fileChooser" accept=".pdf" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Accuracy Filter -->
+            <div class="filter-section">
+                <label class="input-label">Accuracy Level</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="accuracy" value="low"> Low</label>
+                    <label><input type="radio" name="accuracy" value="medium" checked> Medium</label>
+                    <label><input type="radio" name="accuracy" value="high"> High</label>
+                </div>
+            </div>
+
+            <!-- Online / Offline Mode -->
+            <div class="mode-section">
+                <label class="input-label">Select Mode</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="mode" value="online" checked> Online</label>
+                    <label><input type="radio" name="mode" value="offline"> Offline</label>
+                </div>
+            </div>
+
+            <!-- Model Dropdown -->
+            <div class="model-section">
+                <label class="input-label">Choose Model</label>
+                <select id="modelDropdownList"></select>
+            </div>
+
+            <!-- Summary Textarea -->
+            <div class="summary-section">
+                <label class="input-label">Summary Output</label>
+                <textarea id="summaryTextarea" readonly></textarea>
+            </div>
+
+            <!-- Output Filename -->
+            <div class="output-section">
+                <label class="input-label">Output File Name</label>
+                <input type="text" id="outputFileInput" value="ci_Test_filename_sum.pdf">
+            </div>
+
+            <!-- Save Button -->
+            <button id="saveFileButton" class="primary-button">Save As</button>
+        </div>
+
+        <div class="app-footer">
+            <p>© 2025 Bharat Electronics Limited</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
