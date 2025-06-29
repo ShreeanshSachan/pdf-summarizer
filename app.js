@@ -88,4 +88,24 @@ document.addEventListener("DOMContentLoaded", function () {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     });
+
+    // Intern-level summarize logic
+document.getElementById('summarizeBtn').addEventListener('click', function () {
+    let fileInput = document.getElementById('fileChooser');
+    let accuracy = document.querySelector('input[name="accuracy"]:checked').value;
+    let mode = document.querySelector('input[name="mode"]:checked').value;
+    let selectedModel = document.getElementById('modelDropdownList').value;
+
+    if (!fileInput.files[0]) {
+        alert("Please choose a PDF file first.");
+        return;
+    }
+
+    // Just for now, simulate summary
+    document.getElementById('summaryTextarea').value =
+        `Summarizing with model: ${selectedModel} at ${accuracy} accuracy in ${mode} mode...\n\n(This is a placeholder summary.)`;
+
+    // Later you can replace this with real backend call using fetch or websocket
+});
+
 });
