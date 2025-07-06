@@ -1,0 +1,46 @@
+    {
+      "name": "pdf-summarizer-sdi",
+      "version": "1.0.0",
+      "description": "A desktop PDF summarizer using Electron and FastAPI",
+      "main": "main.js",
+      "scripts": {
+        "start": "electron .",
+        "build-backend": "cd backend && .\\venv\\Scripts\\python.exe -m PyInstaller main.py --onedir --distpath dist/main --name main --hidden-import=\"uvloop\" --hidden-import=\"httptools\" --hidden-import=\"orjson\" --hidden-import=\"ujson\" --hidden-import=\"asyncio\" --hidden-import=\"anyio\" --hidden-import=\"sniffio\" --hidden-import=\"google.generativeai\" --hidden-import=\"openai\" --add-data \"venv/Lib/site-packages/google;google\" --add-data \"venv/Lib/site-packages/openai;openai\"",
+        "build-app": "electron-builder --win --x64",
+        "build-all": "npm run build-backend && npm run build-app"
+      },
+      "devDependencies": {
+        "electron": "^29.0.0",
+        "electron-builder": "^23.0.0"
+      },
+      "build": {
+        "appId": "com.yourcompany.pdfsummarizer",
+        "productName": "PDF Summarizer",
+        "files": [
+          "frontend/**/*",
+          "main.js",
+          "package.json",
+          "node_modules/**/*"
+        ],
+        "extraResources": [
+          {
+            "from": "backend/dist",
+            "to": "backend/dist",
+            "filter": [
+              "**/*"
+            ]
+          }
+        ],
+        "win": {
+          "target": "nsis",
+          "icon": "build/icon.ico"
+        },
+        "nsis": {
+          "installerIcon": "build/installerIcon.ico",
+          "uninstallerIcon": "build/uninstallerIcon.ico",
+          "uninstallDisplayName": "PDF Summarizer Uninstaller",
+          "license": "LICENSE.md",
+          "allowToChangeInstallationDirectory": true
+        }
+      }
+    }

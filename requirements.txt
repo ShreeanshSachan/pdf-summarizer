@@ -1,0 +1,11 @@
+fastapi==0.111.1
+uvicorn[standard]==0.30.2
+PyPDF2==3.0.1
+transformers==4.42.3
+torch==2.3.1
+google-generativeai==0.7.1
+openai==1.35.1 # Added OpenAI library
+# For Mistral GGUF (uncomment if you enable Mistral in main.py):
+# llama-cpp-python==0.2.78
+# For Claude (uncomment if you enable Claude in main.py):
+# anthropic
